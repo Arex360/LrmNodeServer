@@ -16,7 +16,7 @@ let isNotInsideExcludedList= str =>{
 }
 app.get('/exc',(req,res)=>res.send(excludedList))
 app.get('/',(req,response)=>{
-    axios.get('http://localhost:5001/api/servers').then(res=>{
+    axios.get('http://localhost:8081/api/servers').then(res=>{
         const {data} = res
         let result = data
         result = result.filter(r=>(r.currentPlayers == 1 && isNotInsideExcludedList(r.serverId)))
@@ -47,4 +47,4 @@ app.get('/',(req,response)=>{
         }*/
     })
 })
-app.listen(3001,()=>console.log('server started'))
+app.listen(3002,()=>console.log('server started'))

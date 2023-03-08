@@ -57,11 +57,11 @@ app.get('/exc',(req,res)=>{
     res.send(excludedList)
 })
 app.get('/',(req,response)=>{
-    axios.get('http://localhost:5001/api/servers').then(res=>{
+    axios.get('http://localhost:8081/api/servers').then(res=>{
         while(wait){
 
         }
         createJob(res,response)
     })
 })
-app.listen(3001,()=>console.log('server started'))
+app.listen(3002,()=>console.log('server started'))
